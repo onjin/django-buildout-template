@@ -1,10 +1,14 @@
+Get it:
+ * wget http://github.com/onjin/django-buildout-template/tarball/v1.0
+ * unpack && cd in
+
 Use virtualenv for better isolation:
  * virtualenv --no-site-packages ./env
  * source ./env/bin/activate
  * easy_install -U setuptools
 
 if not exists boostrap.py:
- * wget http://svn.zope.org/*checkout*/zc.buildout/trunk/bootstrap/bootstrap.py
+ * "wget http://svn.zope.org/*checkout*/zc.buildout/trunk/bootstrap/bootstrap.py
 then:
  * python bootstrap.py
 
@@ -16,3 +20,8 @@ install:
 
 run:
  * ./bin/django-(prod/dev) runserver
+
+Let's rule:
+ * git init
+ * git add .gitignore bootstrap.py buildout.cfg 
+ * git commit -m '@init'
