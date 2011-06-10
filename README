@@ -53,5 +53,5 @@ add to own project
 ------------------
  * rm -rf .git   # remove .git for django-buildout-template
  * git init
- * git add .gitignore bootstrap.py buildout.cfg dev.cfg local.cfg-dist Makefile prod.cfg versions.cfg
+ * git add .gitignore buildout.cfg dev.cfg local.cfg-dist Makefile prod.cfg versions.cfg templates REDAME README.html project
  * git commit -m '@init'
