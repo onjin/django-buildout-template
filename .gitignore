@@ -16,3 +16,5 @@
 /local.cfg
 /etc
 /var
+/project/production.py
+/project/development.py
