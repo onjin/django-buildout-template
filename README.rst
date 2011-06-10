@@ -9,8 +9,8 @@ Features
 * logrotate - for clear/rotate applications logs
 * auto cron install - supervisor on machine reboot and daily logrotate
 * configurable by **'local.cfg'**
-  * optional pin egg versions
-  * start prod or dev env with supervisor
+   * optional pin egg versions
+   * start prod or dev env with supervisor
 * build for production (with cron install) or for developmen machine (no cron install)
 
 
