@@ -1,0 +1,27 @@
+[inet_http_server]
+port = ${deploy-config:supervisor_port}
+
+[supervisord]
+logfile = ${buildout:directory}/var/log/supervisord.log
+logfile_maxbytes = 50MB
+logfile_backups = 10
+loglevel = info
+pidfile = ${buildout:directory}/var/supervisord.pid
+nodaemon = false
+
+[supervisorctl]
+serverurl = http://127.0.0.1:${deploy-config:supervisor_port}
+
+[rpcinterface:supervisor]
+supervisor.rpcinterface_factory=supervisor.rpcinterface:make_main_rpcinterface
+
+[include]
+files = ${buildout:directory}/etc/*-supervisor.conf
+
+[program:django]
+directory = ${buildout:directory}
+command = ${buildout:directory}/bin/django-${deploy-config:env} runfcgi daemonize=false method=threaded host=127.0.0.1 port=${deploy-config:django_fcgi_port} minspare=1 maxspare=2 maxrequests=1000 maxchildren=20
+autostart = ${deploy-config:autostart_apps}                ; start at supervisord start (default: true)
+autorestart = true              ; retstart at unexpected quit (default: true)
+startsecs = 2                  ; number of secs prog must stay running (def. 1)
+startretries = 3                ; max # of serial start failures (default 3)

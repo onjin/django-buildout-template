@@ -1,28 +1,57 @@
-Get it:
- * wget http://github.com/onjin/django-buildout-template/tarball/v1.0.3
+Features
+========
+
+ - supervisor - for start & monitoring django processes
+ - logrotate - for clear/rotate applications logs
+ - auto cron install - supervisor on machine reboot and daily logrotate
+ - configurable by **'local.cfg'**
+    - optional pin egg versions
+    - start prod or dev env with supervisor
+ - build for production (with cron install) or for developmen machine (no cron install)
+
+
+Install
+=======
+
+Get it
+------
+
+ * wget https://github.com/onjin/django-buildout-template/archives/master
  * unpack && cd in
 
-Use virtualenv for better isolation:
+
+Use virtualenv for better isolation
+-----------------------------------
+
  * virtualenv --no-site-packages ./env
  * source ./env/bin/activate
  * easy_install -U setuptools
 
-if not exists boostrap.py:
- * "wget http://svn.zope.org/*checkout*/zc.buildout/trunk/bootstrap/bootstrap.py
-then:
- * python bootstrap.py
 
-build it:
- * ./bin/buildout
- * or simple use 'make'
+customize
+---------
+ * cp local.cfg-dist to local.cfg and edit
 
-install:
+build it
+--------
+ * 'make'' - for help or 'make dev' , 'make prod'
+
+you got
+-------
  * ./bin/django-prod syncdb
 
-run:
+single run
+----------
  * ./bin/django-(prod/dev) runserver
 
-Let's rule:
+run
+---
+ * ./bin/supervisord (-n for no background & debug)
+ * ./bin/supervisorctl
+
+add to own project
+------------------
+ * rm -rf .git   # remove .git for django-buildout-template
  * git init
- * git add .gitignore bootstrap.py buildout.cfg 
+ * git add .gitignore bootstrap.py buildout.cfg dev.cfg local.cfg-dist Makefile prod.cfg versions.cfg
  * git commit -m '@init'
