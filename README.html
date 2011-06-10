@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
-<title></title>
+<title>django-buildout-template</title>
 <style type="text/css">
 
 /*
@@ -310,105 +310,77 @@ ul.auto-toc {
 </style>
 </head>
 <body>
-<div class="document">
-
+<div class="document" id="django-buildout-template">
+<h1 class="title">django-buildout-template</h1>
 
 <div class="section" id="features">
 <h1>Features</h1>
-<blockquote>
-<ul>
-<li><p class="first">supervisor - for start &amp; monitoring django processes</p>
-</li>
-<li><p class="first">logrotate - for clear/rotate applications logs</p>
-</li>
-<li><p class="first">auto cron install - supervisor on machine reboot and daily logrotate</p>
-</li>
-<li><dl class="first docutils">
-<dt>configurable by <strong>'local.cfg'</strong></dt>
-<dd><ul class="first last simple">
-<li>optional pin egg versions</li>
-<li>start prod or dev env with supervisor</li>
+<ul class="simple">
+<li>supervisor - for start &amp; monitoring django processes</li>
+<li>logrotate - for clear/rotate applications logs</li>
+<li>auto cron install - supervisor on machine reboot and daily logrotate</li>
+<li>configurable by <strong>'local.cfg'</strong>
+* optional pin egg versions
+* start prod or dev env with supervisor</li>
+<li>build for production (with cron install) or for developmen machine (no cron install)</li>
 </ul>
-</dd>
-</dl>
-</li>
-<li><p class="first">build for production (with cron install) or for developmen machine (no cron install)</p>
-</li>
-</ul>
-</blockquote>
 </div>
 <div class="section" id="install">
 <h1>Install</h1>
 <div class="section" id="get-it">
 <h2>Get it</h2>
-<blockquote>
 <ul class="simple">
 <li>wget <a class="reference external" href="https://github.com/onjin/django-buildout-template/archives/master">https://github.com/onjin/django-buildout-template/archives/master</a></li>
 <li>unpack &amp;&amp; cd in</li>
 </ul>
-</blockquote>
 </div>
 <div class="section" id="use-virtualenv-for-better-isolation">
 <h2>Use virtualenv for better isolation</h2>
-<blockquote>
 <ul class="simple">
 <li>virtualenv --no-site-packages ./env</li>
 <li>source ./env/bin/activate</li>
 <li>easy_install -U setuptools</li>
 </ul>
-</blockquote>
 </div>
 <div class="section" id="customize">
 <h2>customize</h2>
-<blockquote>
 <ul class="simple">
 <li>cp local.cfg-dist to local.cfg and edit</li>
 </ul>
-</blockquote>
 </div>
 <div class="section" id="build-it">
 <h2>build it</h2>
-<blockquote>
 <ul class="simple">
 <li>'make'' - for help or 'make dev' , 'make prod'</li>
 </ul>
-</blockquote>
 </div>
 <div class="section" id="you-got">
 <h2>you got</h2>
-<blockquote>
 <ul class="simple">
 <li>./bin/django-prod syncdb</li>
 </ul>
-</blockquote>
 </div>
 <div class="section" id="single-run">
 <h2>single run</h2>
-<blockquote>
 <ul class="simple">
 <li>./bin/django-(prod/dev) runserver</li>
 </ul>
-</blockquote>
 </div>
-<div class="section" id="run">
-<h2>run</h2>
-<blockquote>
+<div class="section" id="run-fcgi-processes-es">
+<h2>run fcgi processes(es)</h2>
 <ul class="simple">
 <li>./bin/supervisord (-n for no background &amp; debug)</li>
 <li>./bin/supervisorctl</li>
 </ul>
-</blockquote>
 </div>
 <div class="section" id="add-to-own-project">
 <h2>add to own project</h2>
-<blockquote>
 <ul class="simple">
 <li>rm -rf .git   # remove .git for django-buildout-template</li>
 <li>git init</li>
-<li>git add .gitignore bootstrap.py buildout.cfg dev.cfg local.cfg-dist Makefile prod.cfg versions.cfg</li>
+<li>git add .gitignore buildout.cfg dev.cfg local.cfg-dist Makefile prod.cfg versions.cfg templates REDAME README.html project</li>
 <li>git commit -m <a class="reference external" href="mailto:'&#64;init">'&#64;init</a>'</li>
 </ul>
-</blockquote>
 </div>
 </div>
 </div>
