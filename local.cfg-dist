@@ -8,7 +8,6 @@ overwrite-picked-versions-file = false
 ; in production change to 'true'
 autostart_apps = true
 
-supervisor_port = 9001
 django_fcgi_port = 4003
 
 ; use django-${env} while starting django process by supervisor

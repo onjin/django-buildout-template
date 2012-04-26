@@ -27,14 +27,14 @@ system:
 
 bootstrap.py :
 	wget http://svn.zope.org/*checkout*/zc.buildout/trunk/bootstrap/bootstrap.py
-	python bootstrap.py -c dev.cfg
+	python -S bootstrap.py
 
 bin/buildout : bootstrap.py
 	@mkdir -p etc
 	@mkdir -p var/log
 
 dev: system bin/buildout compile 
-	python bin/buildout -c dev.cfg
+	bin/buildout -c dev.cfg
 	@echo
 	@echo " .: DEVELOPMENT configuration was built, so NO CRON here"
 	@echo
@@ -42,7 +42,7 @@ dev: system bin/buildout compile
 	@echo
 
 prod: system bin/buildout compile
-	python bin/buildout -c prod.cfg
+	bin/buildout -c prod.cfg
 	@echo
 	@echo " .: PRODUCTION configuration was built, with CRON installed"
 	@echo 

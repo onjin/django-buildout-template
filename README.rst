@@ -9,7 +9,7 @@ Features
 * logrotate - for clear/rotate applications logs
 * auto cron install - supervisor on machine reboot and daily logrotate
 * configurable by **'local.cfg'**
-   * optional pin egg versions
+   * optional pin egg versions using **'versions.cfg'**
    * start prod or dev env with supervisor
 * build for production (with cron install) or for developmen machine (no cron install)
 
@@ -22,14 +22,6 @@ Get it
 
 * wget https://github.com/onjin/django-buildout-template/archives/master
 * unpack && cd in
-
-
-Use virtualenv for better isolation
------------------------------------
-
-* virtualenv --no-site-packages ./env
-* source ./env/bin/activate
-* easy_install -U setuptools
 
 
 customize

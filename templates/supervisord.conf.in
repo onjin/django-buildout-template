@@ -1,5 +1,5 @@
-[inet_http_server]
-port = ${deploy-config:supervisor_port}
+[unix_http_server]
+file = ${buildout:directory}/var/supervisord.sock
 
 ; for unix/linux you can use files instead of TCP ports
 ; comment [inet_http_server] and uncomment [unix_http_server] section
@@ -16,8 +16,8 @@ pidfile = ${buildout:directory}/var/supervisord.pid
 nodaemon = false
 
 [supervisorctl]
-serverurl = http://127.0.0.1:${deploy-config:supervisor_port}
-;serverurl = unix://${buildout:directory}/var/supervisord.sock
+serverurl = unix://${buildout:directory}/var/supervisord.sock
+prompt = django
 
 [rpcinterface:supervisor]
 supervisor.rpcinterface_factory=supervisor.rpcinterface:make_main_rpcinterface
