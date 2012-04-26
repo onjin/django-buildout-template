@@ -20,7 +20,7 @@ Install
 Get it
 ------
 
-* wget https://github.com/onjin/django-buildout-template/archives/master
+* wget https://github.com/onjin/django-buildout-template/zipball/master
 * unpack && cd in
 
 
