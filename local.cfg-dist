@@ -1,8 +1,6 @@
 [buildout]
 
 [deploy-config]
-# do or don't overwrite versions.cfg
-overwrite-picked-versions-file = false
 
 ; start apps when supervisord is started
 ; in production change to 'true'
